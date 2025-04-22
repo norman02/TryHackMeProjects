@@ -1,0 +1,2 @@
+/assets              [36m (Status: 301)[0m [Size: 309][34m [--> http://school.thm/assets/][0m
+/server-status       [33m (Status: 403)[0m [Size: 275]

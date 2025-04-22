@@ -1,0 +1,11 @@
+# Nmap 7.94SVN scan initiated Tue Apr 22 11:54:27 2025 as: nmap -A -p80 -oN nmap_http.txt school.thm
+Nmap scan report for school.thm (10.10.5.150)
+Host is up (0.34s latency).
+
+PORT   STATE SERVICE VERSION
+80/tcp open  http    Apache httpd 2.4.41 ((Ubuntu))
+|_http-server-header: Apache/2.4.41 (Ubuntu)
+|_http-title: U.A. High School
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Tue Apr 22 11:54:46 2025 -- 1 IP address (1 host up) scanned in 19.42 seconds
