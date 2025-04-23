@@ -196,3 +196,19 @@ oneforall.jpg: JPEG image data, JFIF standard 1.01, aspect ratio, density 1x1, s
 Enter passphrase: AllmightForEver!!!
 wrote extracted data to "creds.txt"
 7. password found: One?For?All_!!one1/A
+
+## Get User Flag
+
+1. ssh deku@school.thm with the new password, success!
+2. deku@myheroacademia:~$ sudo -l
+[sudo] password for deku: 
+Matching Defaults entries for deku on myheroacademia:
+    env_reset, mail_badpass, secure_path=/usr/local/sbin\:/usr/local/bin\:/usr/sbin\:/usr/bin\:/sbin\:/bin\:/snap/bin
+
+User deku may run the following commands on myheroacademia:
+    (ALL) /opt/NewComponent/feedback.sh
+3. deku@myheroacademia:~$ find / -name "user.txt" 2>/dev/null
+/home/deku/user.txt
+4. deku@myheroacademia:~$ cat user.txt 
+THM{W3lC0m3_D3kU_1A_0n3f0rAll??}
+
