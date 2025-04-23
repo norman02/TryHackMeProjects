@@ -178,3 +178,21 @@ drwxrwxr-x 3 www-data www-data   4096 Jan 25  2024 ..
 -rw-rw-r-- 1 www-data www-data  98264 Jul  9  2023 oneforall.jpg
 -rw-rw-r-- 1 www-data www-data 237170 Jul  9  2023 yuei.jpg
 oneforall.jpg isn't used on the site
+
+## Image Examination
+
+1. download image wget http://school.thm/assets/images/oneforall.jpg
+2. exiftool oneforall.jpg > exif.txt it appears to be a .png file not .jpg
+3. pngcheck -v oneforall.png
+File: oneforall.png (98264 bytes)
+  invalid chunk name "" (01 00 00 01)
+ERRORS DETECTED in oneforall.png
+4. file oneforall.png 
+oneforall.png: data
+5. hexedit to switch to jpg : 
+file oneforall.jpg
+oneforall.jpg: JPEG image data, JFIF standard 1.01, aspect ratio, density 1x1, segment length 16, baseline, precision 8, 1140x570, components 3
+6. steghide extract -sf oneforall.jpg
+Enter passphrase: AllmightForEver!!!
+wrote extracted data to "creds.txt"
+7. password found: One?For?All_!!one1/A

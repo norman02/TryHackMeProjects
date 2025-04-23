@@ -1,0 +1,12 @@
+ExifTool Version Number         : 12.57
+File Name                       : oneforall.jpg
+Directory                       : .
+File Size                       : 98 kB
+File Modification Date/Time     : 2023:07:09 12:42:05-04:00
+File Access Date/Time           : 2025:04:23 09:05:57-04:00
+File Inode Change Date/Time     : 2025:04:23 09:02:54-04:00
+File Permissions                : -rw-r--r--
+File Type                       : PNG
+File Type Extension             : png
+MIME Type                       : image/png
+Warning                         : PNG image did not start with IHDR
