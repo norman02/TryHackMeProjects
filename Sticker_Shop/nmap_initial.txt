@@ -1,0 +1,9 @@
+# Nmap 7.94SVN scan initiated Wed Apr 23 16:11:44 2025 as: nmap -sN -oN nmap_initial.txt sticker.thm
+Nmap scan report for sticker.thm (10.10.163.171)
+Host is up (0.13s latency).
+Not shown: 998 closed tcp ports (reset)
+PORT     STATE         SERVICE
+22/tcp   open|filtered ssh
+8080/tcp open|filtered http-proxy
+
+# Nmap done at Wed Apr 23 16:11:55 2025 -- 1 IP address (1 host up) scanned in 10.34 seconds

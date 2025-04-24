@@ -1,0 +1,11 @@
+
+1. entering http://sticker.thm:8080/flag.txt into the browser we get a 401 error. 
+2. $sudo nmap -sN -oN nmap_initial.txt sticker.thm 
+3. sudo nmap -A -oN nmap_port8080.txt sticker.thm
+4. The sticker shop has 2 pages the home page is useless but there is a form on the feedback page
+5. XSS on feedback page has no imediate effect, perhaps it is stored somewhere
+6. gobuster dir -u http://sticker.thm:8080 -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt -o gubuster.txt
+7. We found a promising directory /view_feedback  
+8. curl -X GET http://sticker.thm:8080/view_feedback
+<h1>401 Unauthorized</h1>
+
