@@ -43,4 +43,3 @@ curl -H 'Authorization: Bearer [JWT token]' http://jwt-security.thm/api/v1.0/exa
 - Try modifying the token to escalate privileges.  
 - Extract the flag and document the exploitation process.  
 
-
