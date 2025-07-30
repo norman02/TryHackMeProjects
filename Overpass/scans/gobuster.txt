@@ -1,0 +1,6 @@
+/aboutus             [36m (Status: 301)[0m [Size: 0][34m [--> aboutus/][0m
+/admin               [36m (Status: 301)[0m [Size: 42][34m [--> /admin/][0m
+/css                 [36m (Status: 301)[0m [Size: 0][34m [--> css/][0m
+/downloads           [36m (Status: 301)[0m [Size: 0][34m [--> downloads/][0m
+/img                 [36m (Status: 301)[0m [Size: 0][34m [--> img/][0m
+/index.html          [36m (Status: 301)[0m [Size: 0][34m [--> ./][0m
