@@ -1,61 +1,105 @@
+
+## 📄 `Ignite/walkthrough.md`
+
+````markdown
 # TryHackMe Room: Ignite
 
 - [Room Link](https://tryhackme.com/room/ignite)
-- Difficulty: Easy
-- Status: ✅ Completed
+- Difficulty: ✅ Misleadingly labeled "Easy"
+- Status: ❌ Incomplete due to broken RCE handling and shell restrictions
+- Tags: Fuel CMS, CVE-2018-16763, RCE, PHP injection
 
 ---
 
-## 🧠 Room Overview
+## 🧠 Overview
 
-This is a beginner-level box that showcases:
-- Enumeration
-- Exploiting a vulnerable **Fuel CMS**
-- Uploading a reverse shell
-- Gaining root access via `sudo`
-
----
-
-## 🌐 Target Info
-
-- IP: `10.10.XXX.XXX`  ← replace with real IP
+The room presents a vulnerable installation of **Fuel CMS 1.4.1**, exploitable via **CVE-2018-16763**. While RCE is technically possible, severe PHP input parsing limitations prevent practical shell access.
 
 ---
 
 ## 🔍 Enumeration
 
+### Nmap Scan
+
 ```bash
-nmap -sC -sV -oN nmap.txt 10.10.XXX.XXX
+nmap -sC -sV -oN nmap.txt ignite.thm
+````
 
-## 🔥 Vulnerability Identified
+* Port 80 open
+* Apache 2.4.18
+* `/fuel/` found in `robots.txt`
 
-Used `searchsploit` to identify known vulnerabilities in Fuel CMS:
+### Gobuster
+
+```bash
+gobuster dir -u http://ignite.thm -w /usr/share/wordlists/dirb/common.txt -x php,txt,html -o gobuster.txt
+```
+
+* `/fuel/` confirmed
+* `/offline`, `/home`, `/index.php` visible
+
+---
+
+## ⚔️ Exploitation Attempt
+
+### CVE-2018-16763
 
 ```bash
 searchsploit fuel cms
-## ⚙️ Manual Exploit Setup
+```
 
-Copied official RCE exploit from ExploitDB:
+* Fuel CMS 1.4.1 RCE via vulnerable `filter=` parameter
+* Used modified Python exploit: `fuel_rce.py`
+* Confirmed command execution via `whoami`, `id`, `uname`
 
-```bash
-cp /usr/share/exploitdb/exploits/linux/webapps/47138.py ./fuel_rce.py
-## 💥 Exploitation: Remote Code Execution via CVE-2018-16763
+### Example:
 
-Used a Python 3–compatible version of the public Fuel CMS 1.4.1 exploit (ExploitDB 47138). Modified it to:
-
-- Remove Burp proxy
-- Use `input()` for Python 3
-- Target: `http://ignite.thm`
-- Payload: PHP injection using `pi(print($a='system'))+$a('cmd')`
-
-Confirmed successful RCE:
 ```bash
 cmd: whoami
-→ www-data
+→ systemwww-data
+```
 
-cmd: id
-→ uid=33(www-data) gid=33(www-data)
+---
 
-cmd: uname -a
-→ Linux ubuntu 4.15.0-45-generic ...
+## 🧨 Reverse Shell Attempts
+
+Tried:
+
+* Bash reverse shell
+* Base64-decoded payload
+* PHP shell upload (`.php`, `.phtml`, `.php.jpg`)
+* Named pipe shell (`mkfifo`)
+* Metasploit (`fuelcms_traversal`) — module missing or unindexed
+
+**All failed due to PHP's `create_function()` breaking on shell syntax.**
+
+---
+
+## 🏁 Flags
+
+Unable to retrieve flags due to:
+
+* RCE being too limited for file reads
+* No accessible `/home/<user>` or `/root` content
+* `cat` commands breaking PHP
+
+---
+
+## 🧵 Lessons Learned
+
+* CVE exploitation ≠ guaranteed shell
+* Web-based RCEs may be heavily restricted
+* Always test flag paths early if shell is unstable
+
+---
+
+## ✅ GitHub Summary
+
+* Added:
+
+  * `nmap.txt`
+  * `gobuster.txt`
+  * `fuel_rce.py` (modified exploit)
+  * `walkthrough.md`
+* Marked room as **incomplete but documented**
 
