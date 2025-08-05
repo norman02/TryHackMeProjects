@@ -130,4 +130,23 @@ This can lead to sensitive directories (e.g., `/admin`, `/config`, `/backups`) b
 🛑 **Important:**
 `robots.txt` is not a security control. Anyone (including attackers) can read it. Use it to avoid indexing, not to protect sensitive data.
 
+## Task 5 – Sitemaps
+
+> 1. What is the typical file structure of a "Sitemap"?  
+**Answer:** `.xml`
+
+> 2. What real life example can "Sitemaps" be compared to?  
+**Answer:** `map`
+
+> 3. Name the keyword for the path taken for content on a website  
+**Answer:** `route`
+
+### 🧠 Explanation
+
+- **Sitemaps** are `.xml` files that list all the important URLs on a website.
+- They help search engines **crawl** the site efficiently, without relying solely on link discovery.
+- The analogy of a real-world **map** fits perfectly — just as maps show routes between places, sitemaps show routes between content.
+- Crawlers use these pre-defined **routes** to locate and index content faster and more accurately.
+
+Sitemaps are an important part of SEO because they improve how thoroughly and efficiently a site is indexed.
 
