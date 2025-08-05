@@ -53,4 +53,22 @@ Google Dorking works *because* this index is so rich. You’re querying Google's
 That’s why pages blocked by `robots.txt` or protected by `noindex` don’t show up in dork results — they’re never indexed in the first place.
 
 ---
+## Task 3 – Search Engine Optimization (SEO)
+
+*No answer required.*
+
+This task introduces SEO (Search Engine Optimization) and explains how search engines use various signals to rank pages in their results.
+
+### Key Takeaways:
+- **SEO** is about making a site easier to crawl and rank.
+- Factors include:
+  - Site responsiveness across browsers and devices
+  - The presence of a sitemap
+  - Keyword relevance
+- Sites are scored by complex, proprietary algorithms.
+- Tools like Google’s SEO Analyzer can show how well a site ranks.
+
+The task ends by introducing a limitation tool — `robots.txt` — which will be covered in the next task.
+
+This sets the stage for Task 4, which introduces *robots.txt* and how web admins can control what gets indexed.
 
