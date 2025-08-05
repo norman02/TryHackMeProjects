@@ -72,3 +72,62 @@ The task ends by introducing a limitation tool — `robots.txt` — which will b
 
 This sets the stage for Task 4, which introduces *robots.txt* and how web admins can control what gets indexed.
 
+Absolutely — here’s the **complete Joplin-compatible walkthrough for Task 4 – Robots.txt**, including all questions, corrected answers, explanations, and your requested sidebar.
+
+---
+
+```markdown
+## Task 4 – Robots.txt
+
+This task explains how the `robots.txt` file controls web crawler behavior. It's located in the root directory of a site and defines what search engine crawlers (user-agents) are allowed or disallowed from indexing.
+
+---
+
+> **1. Where would `robots.txt` be located on the domain `ablog.com`?**
+**Answer:** `ablog.com/robots.txt`
+
+> **2. If a website was to have a sitemap, where would that be located?**
+**Answer:** `/sitemap.xml`
+
+> **3. How would we only allow "Bingbot" to index the website?**
+**Answer:**
+
+`User-agent: Bingbot
+Allow: /`
+
+
+> **4. How would we prevent a "Crawler" from indexing the directory `/dont-index-me/`?**
+**Answer:** `Disallow: /dont-index-me/`
+
+> **5. What is the extension of a Unix/Linux system configuration file that we might want to hide from "Crawlers"?**
+**Answer:** `.conf`
+
+---
+
+### 🧠 Explanation
+
+- `robots.txt` lives at the root of a domain (`example.com/robots.txt`).
+- It provides indexing rules for crawlers, with instructions like:
+  - `User-agent`: specifies which crawler the rule applies to.
+  - `Allow`: explicitly allows access.
+  - `Disallow`: blocks access to directories or files.
+- You can even use patterns to block entire file types (e.g., `*.conf`).
+- This file is **public** — attackers often read it for hints about sensitive directories.
+
+---
+
+### 📎 Sidebar: What if There Is No `robots.txt`?
+
+If a website does **not** include a `robots.txt` file at its root, search engine crawlers will assume **full permission** to index everything they can reach.
+
+#### 🔍 Default Behavior
+- No file = no restrictions.
+- Crawlers will index all accessible URLs, unless blocked by other means (like authentication or `noindex` tags).
+
+#### 🔐 Security Implication
+This can lead to sensitive directories (e.g., `/admin`, `/config`, `/backups`) being indexed and appearing in Google search results — a common Google Dorking target.
+
+🛑 **Important:**
+`robots.txt` is not a security control. Anyone (including attackers) can read it. Use it to avoid indexing, not to protect sensitive data.
+
+
