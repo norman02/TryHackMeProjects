@@ -149,4 +149,30 @@ This can lead to sensitive directories (e.g., `/admin`, `/config`, `/backups`) b
 - Crawlers use these pre-defined **routes** to locate and index content faster and more accurately.
 
 Sitemaps are an important part of SEO because they improve how thoroughly and efficiently a site is indexed.
+## Task 6 – Using Google for Advanced Searching
+
+> 1. What would be the format used to query the site `bbc.co.uk` about flood defences?  
+**Answer:** `site:bbc.co.uk flood defences`
+
+> 2. What term would you use to search by file type?  
+**Answer:** `filetype:`
+
+> 3. What term can we use to look for login pages?  
+**Answer:** `intitle:login`
+
+### 🧠 Explanation
+
+This task introduces common Google Dorking search operators:
+
+- `site:` restricts results to a specific domain  
+  Example: `site:bbc.co.uk`
+- `filetype:` filters results by file extension  
+  Example: `filetype:pdf`, `filetype:xlsx`, etc.
+- `intitle:` finds pages with specific terms in the title  
+  Example: `intitle:login` often reveals login panels or admin pages
+
+These operators allow you to surgically extract useful content from the web — often content that was never meant to be easily found.
+
+⚠️ **Important Reminder:**  
+Google Dorking is legal because it only returns publicly indexed content. What you *do* with that content determines legality and ethics.
 
