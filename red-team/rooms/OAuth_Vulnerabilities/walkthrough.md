@@ -43,7 +43,7 @@ Answer: Access Token
 
 OAuth 2.0 defines several **grant types**, which specify how a client obtains an **access token** to access protected resources on behalf of a user. Each type is tailored for different client capabilities and trust levels.
 
-### 🔐 1. Authorization Code Grant
+###  1. Authorization Code Grant
 
 * **Use Case**: Server-side apps (e.g., PHP, Java, .NET)
 * **Flow**:
@@ -53,7 +53,7 @@ OAuth 2.0 defines several **grant types**, which specify how a client obtains an
   3. The client exchanges the code (server-to-server) for an access token.
 * **Pros**: Secure — tokens not exposed to the browser; supports refresh tokens.
 
-### ⚠️ 2. Implicit Grant
+###  2. Implicit Grant
 
 * **Use Case**: Client-side apps (e.g., SPAs, mobile)
 * **Flow**:
@@ -63,7 +63,7 @@ OAuth 2.0 defines several **grant types**, which specify how a client obtains an
 * **Pros**: Simpler, faster.
 * **Cons**: Less secure — token visible in browser; no refresh tokens.
 
-### 👤 3. Resource Owner Password Credentials (ROPC) Grant
+###  3. Resource Owner Password Credentials (ROPC) Grant
 
 * **Use Case**: First-party/trusted apps.
 * **Flow**:
@@ -74,7 +74,7 @@ OAuth 2.0 defines several **grant types**, which specify how a client obtains an
 * **Pros**: Fewer steps.
 * **Cons**: Insecure — credentials shared directly.
 
-### 🤖 4. Client Credentials Grant
+###  4. Client Credentials Grant
 
 * **Use Case**: Machine-to-machine / backend services.
 * **Flow**:
