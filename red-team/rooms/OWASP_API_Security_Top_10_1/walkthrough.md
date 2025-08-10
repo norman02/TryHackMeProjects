@@ -1,9 +1,7 @@
 
 ## ✅ OWASP API Security Top 10 - 1 — Quick Walkthrough Template
 
-Here’s a `walkthrough.md` template you can drop into your repo now:
 
-```markdown
 # TryHackMe Room: OWASP API Security Top 10 - 1
 
 - [Room Link](https://tryhackme.com/room/owaspapi10)
