@@ -36,3 +36,56 @@ Answer: State
 What credentials can the client use to access protected resources on behalf of the resource owner?
 Answer: Access Token
 ***
+## Task 3 - OAuth Grant Types
+
+
+
+
+OAuth 2.0 defines several **grant types**, which specify how a client obtains an **access token** to access protected resources on behalf of a user. Each type is tailored for different client capabilities and trust levels.
+
+### 🔐 1. Authorization Code Grant
+
+* **Use Case**: Server-side apps (e.g., PHP, Java, .NET)
+* **Flow**:
+
+  1. User is redirected to the authorization server.
+  2. Upon approval, a code is sent to the client.
+  3. The client exchanges the code (server-to-server) for an access token.
+* **Pros**: Secure — tokens not exposed to the browser; supports refresh tokens.
+
+### ⚠️ 2. Implicit Grant
+
+* **Use Case**: Client-side apps (e.g., SPAs, mobile)
+* **Flow**:
+
+  1. User is redirected and approves access.
+  2. Access token is returned in the URL fragment.
+* **Pros**: Simpler, faster.
+* **Cons**: Less secure — token visible in browser; no refresh tokens.
+
+### 👤 3. Resource Owner Password Credentials (ROPC) Grant
+
+* **Use Case**: First-party/trusted apps.
+* **Flow**:
+
+  1. User provides credentials directly to the client.
+  2. Client sends credentials to authorization server.
+  3. Access token is issued.
+* **Pros**: Fewer steps.
+* **Cons**: Insecure — credentials shared directly.
+
+### 🤖 4. Client Credentials Grant
+
+* **Use Case**: Machine-to-machine / backend services.
+* **Flow**:
+
+  1. Client authenticates with client ID/secret.
+  2. Receives access token directly.
+* **Pros**: No user data involved — ideal for server-server communication.
+
+---
+### Questions
+What is the grant type often used for server-server interaction?
+Answer: Client Credentials
+
+***
