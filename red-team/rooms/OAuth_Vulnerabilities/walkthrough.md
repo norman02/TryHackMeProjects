@@ -187,3 +187,38 @@ OAuth implementations will generally redirect the browser to an authorization se
 ### Questions
 Q1 What is the name of the toolkit used for implementing OAuth in the URL http://cofee.thm:8000/
 Answer - django-oauth-toolkit
+***
+## Task 6 - Exploiting OAuth: Stealing Token
+
+### Vulnerability:
+
+If an attacker controls a registered redirect URI, the can:
+
+1. Initiate login with a fake redirect_uri
+2. Victum logs in and consents
+3. Authorization code is sent to attackers machine
+
+### In this room:
+
+* Attacker controls http://dev.bistro.thm:8002
+* hosts:
+* * redirect_uri.html -> sends form to ouath_login/ with hidden redirect_uri
+* * malicious_redirect.html -> JavaScript captures code form URL
+### Victim flow:
+1. Clicks Login via Oauth on attacker's page
+2. Logs in as victim:victim123
+3. code is sent to malicious_redirect.html and displayed
+
+### Attacker Flow
+
+1. Copies the intercepted coude
+2. Visits:
+```
+http://bistro.thm:8000/oauthdemo/callbackforflag/?code=xxxx
+```
+3. Receivs token + flag
+token: ZhbMZE10koS84l7BTYqY2tezt9RRf6
+flag: "THM{GOT_THE_TOKEN007}"
+
+Q: What is the flag after getting the access tokent?
+
