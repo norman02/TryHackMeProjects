@@ -218,7 +218,67 @@ http://bistro.thm:8000/oauthdemo/callbackforflag/?code=xxxx
 ```
 3. Receivs token + flag
 token: ZhbMZE10koS84l7BTYqY2tezt9RRf6
-flag: "THM{GOT_THE_TOKEN007}"
 
 Q: What is the flag after getting the access tokent?
 
+flag: "THM{GOT_THE_TOKEN007}"
+***
+## Task 7 - CSRF in OAuth
+---
+### Goal
+Exploit a missing state parameter in the OAuth flow to perform a CSRF attack that links the attackers OAuth account to the victim's session, exfiltrating contact data.
+---
+### Why the state Parameter Matters
+* The state parameter is used to:
+ * Prevent CSRF attacks in Oauth.
+ * Ensure that the authorization response matches the request
+* If the parameter is missing or static, a threat actor can reuse the authorization codes across user sessions
+
+## Explit Steps
+
+### Step 1 - Attacker's Perspective
+
+#### Login as attacker
+* URL: http://mycountacts.thm:8080/csrf/index.php
+* Credentials attacker:attacker
+
+#### Get Attacker's OAuth Code
+
+```
+http://coffee.thm:8000/o/authorize/?response_type=code&client_id=kwoy5pKgHOn0bJPNYuPdUL2du8aboMX1n9h9C0PN&redirect_uri=http://coffee.thm:8000/oauthdemo/callbackforcsrf/
+```
+
+You’ll see a response like:
+
+```json
+{
+  "code": "abcdef123456",
+  "Payload": "http://bistro.thm:8080/csrf/callbackcsrf.php?code=abcdef123456"
+}
+```
+
+* Copy the full **Payload** URL.
+
+
+### Step 2 - Victim's Perspective
+
+#### Login as victim:
+
+* URL: http://bistro.thm:8080/csrf
+* Credentials: victim:victim
+
+
+#### Simulate CSRF attack:
+
+in the same browser pastee the attacker's paylod URL
+```
+http://bistro.thm:8080/csrf/callbackcsrf.php?code=XXXXX
+```
+Since there is no state parameter, the system can't tell that the authorization code belogns to someone else so it accepts it and links the attacker's account to the victims session
+
+### Flag & Answers
+token:"HVzfPZqG7qRd5C01elgF670J46MBYb"
+Q1: What is the flag value after attaching the attacker's account with the victims account?
+THM{CONTACTS_SYNCED}
+Q2: What parameter name does the client application include in the authorization request to avoid CSRF attacks?
+Answer: state
