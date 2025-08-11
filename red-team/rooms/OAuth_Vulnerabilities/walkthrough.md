@@ -89,3 +89,84 @@ What is the grant type often used for server-server interaction?
 Answer: Client Credentials
 
 ***
+
+
+## Task 4 – How OAuth Flow Works (TryHackMe: OAuth Vulnerabilities)
+
+### Overview
+
+This task walks through a full OAuth 2.0 **Authorization Code Grant** flow using a practical example:
+
+* **OAuth Provider**: `http://coffee.thm:8000`
+* **Client App**: `http://bistro.thm:8000`
+* **User Accounts**:
+
+  * Victim: `victim:victim123`
+  * Attacker: `attacker:tesla@123`
+
+---
+
+### OAuth Flow Breakdown
+
+#### 1. **Authorization Request**
+
+* The client (`bistro.thm`) redirects the user to the **OAuth provider** (`coffee.thm`) with:
+
+  * `response_type=code`
+  * `client_id`
+  * `redirect_uri`
+  * `state` (CSRF token)
+  * `scope`
+* URL Example:
+
+  ```
+  http://coffee.thm:8000/accounts/login/?next=/o/authorize/?client_id=...&response_type=code...
+  ```
+
+#### 2. **Authentication & Authorization**
+
+* User (Tom) logs into the **authorization server**.
+* Presented with a **consent screen** to approve scopes (e.g., view coffee orders).
+
+#### 3. **Authorization Response**
+
+* If Tom consents:
+
+  * Redirected to `bistro.thm` with:
+
+    * `code` = Authorization Code
+    * `state` = CSRF token
+* Example:
+
+  ```
+  http://bistro.thm:8000/oauthdemo/callback?code=AuthCode123456&state=xyzSecure123
+  ```
+
+#### 4. **Token Request**
+
+* The client exchanges the code for an access token via POST to `/o/token/`.
+* Parameters:
+
+  * `grant_type=authorization_code`
+  * `code`
+  * `redirect_uri`
+  * `client_id`
+  * `client_secret`
+* Auth header: Basic Auth (base64 of client\_id\:client\_secret)
+
+#### 5. **Token Response**
+
+* The server returns:
+
+  * `access_token`
+  * `token_type` (usually "Bearer")
+  * `expires_in` **Validity period**
+  * `refresh_token` (optional)
+
+---
+#### Questions:
+Q1: What is the cliend_id value after initiating the OAuth 2.0 Workflow?
+Answer: zlurq9lseKqvHabNqOc2DkjChC000QJPQ0JvNoBt
+Q2: What parameter name determines the time validity of a token in the token response?
+Anser: Expires_in
+***
