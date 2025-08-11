@@ -282,3 +282,43 @@ Q1: What is the flag value after attaching the attacker's account with the victi
 THM{CONTACTS_SYNCED}
 Q2: What parameter name does the client application include in the authorization request to avoid CSRF attacks?
 Answer: state
+***
+## Task 8 - Exploiting OAuth - Implicit Grant Flow
+
+In this flow tokens are directly returned to the client without intermediary authorization, this is primarly used by single-page appplications.
+
+#### Weaknesses
+
+* Exposing Access Token in URL
+* Inadequate Validation of Redirect URIs
+* No HTTPS Implementation
+* Improper Handling of Access Tokens
+
+#### Deprecation of Implicit Grant Flow
+
+Do to vulnerabilities this flow should be deprecated in favor of authrozation code flow with Proof Key for Code Eschange (PKCE)
+
+#### Practical
+In the attached VM, visit http://factbook.thm:8080, where you will see a page that allows you to sync your statuses from a CoffeeShopApp. The authorisation process will start once you click on the "Sync Statuses from CoffeeShopApp" button. The client application is configured to use the implicit grant type, which means the access token will be directly returned to the client. The authorization URL is constructed as follows:
+
+```
+var client_id = 'npmL7WDiRoOvjZoGSDiJhU2ViodTdygjW8rdabt7';
+var redirect_uri = 'http://factbook.thm:8080/callback.php';
+var auth_url = "http://coffee.thm:8000/o/authorize/";
+var url = auth_url + "?response_type=token&client_id=" + client_id + "&redirect_uri=" + encodeURIComponent(redirect_uri);
+window.location.href = url;
+
+```
+#### Victim Perspective
+
+Once the victim authenticates with `victim:victim123` they are redirected to `callback.php`. The status input page is vulnerable to XSS.
+
+#### Atacker Perspective
+
+To prepare for the attacke we run a webserver with a malicious script. Once the payloade is executed it copies the tocken to the attacker's serve at http://<ATTACK_IP>:8081/steal_token
+
+#### Questions
+What symbol seperates the access token from the OAuth 2.0 implicit grant flow URL?
+Answer: #
+Visit the URL http://coffee.thm:8080/flagvalidator/ and enter the access token you acquired. What is the flag value?
+Answer: THM{TOKEN_HACKED}
