@@ -322,3 +322,19 @@ What symbol seperates the access token from the OAuth 2.0 implicit grant flow UR
 Answer: #
 Visit the URL http://coffee.thm:8080/flagvalidator/ and enter the access token you acquired. What is the flag value?
 Answer: THM{TOKEN_HACKED}
+***
+## Task 9 Other Vulnerabilities and Evolution of OAuth 2.1
+
+* Insufficient Token Expiry
+* Replay Attacks
+* Insecure Storage of Tokens
+
+### Evolution of OAuth 2.1
+* deprecation of implicit grant type
+* Mandate using the state parameteter
+* empahasizes secure handling and storage of tokens
+* guidlines for redirect URI validation
+
+#### Questions
+Which of the following has been omitted from  OAuth 2.1?
+Answer: a, Implicit Grant
