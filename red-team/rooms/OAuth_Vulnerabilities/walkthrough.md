@@ -170,3 +170,20 @@ Answer: zlurq9lseKqvHabNqOc2DkjChC000QJPQ0JvNoBt
 Q2: What parameter name determines the time validity of a token in the token response?
 Anser: Expires_in
 ***
+## Task 5 - Identifying OAuth Services
+### Identifying OAuth Usage in an Application
+Look for options allowing users to log in using external services providers, Google, Facebook, Github, etc.
+
+### Detcting OAuth Implementation
+OAuth implementations will generally redirect the browser to an authorization server's URL. This URL often contains specific query parameters, such as response_type, client_id, redirect_uri, scope, and state.
+
+### Identifying the OAuth Framework
+
+- HTTP Headers and Responses Unique identifiers or comments referencing OAuth libraries or frameworks
+- Source Code Analysis: Keywords and import statments that reveal the frameworks in use
+- Authorization and Token endpoints: OAuth implementations might have unique enpoint patterns or structures
+- Error Messages: Error messages and debug output can reveal the underlying stack
+---
+### Questions
+Q1 What is the name of the toolkit used for implementing OAuth in the URL http://cofee.thm:8000/
+Answer - django-oauth-toolkit
