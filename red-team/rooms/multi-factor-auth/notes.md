@@ -95,3 +95,24 @@ A:  904c8ac84e44f0ba942e9e11ee7037b8
 ### Questions
 Q: What is the flag in the dashboard?
 A: 87880e9d27001affdff90989f351c462
+
+## Task 7 - Practical - Beathing the Auto-Logout Feature
+
+* Create exploit.py script to brute force the pin
+* Using the new PHPSESSID, go to http://mfa.thm/labs/third, in dev tools go to storage > cookies
+* Replace the PHPSESSID value with the PHPSESSID from your terminal
+* Go to http://mfa.thm/labs/third/dashboard and retrieve the flag
+
+Session token: vc05hpdmdof9b5dcvtjgcvdr47
+
+### Questions
+Q: What is the flag in the terminal?
+A:  20548e076dbb9ba30c9d94ae4aceb38e 
+
+## Task 8 - Conclusion
+* Understanding MFA
+* Addressing vulnerabilities
+* Best Practices
+
+### Questions
+no answer needed
