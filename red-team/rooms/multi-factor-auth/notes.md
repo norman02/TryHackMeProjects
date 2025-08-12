@@ -38,3 +38,18 @@ No answer needed
 ### Questions
 Q: When Logging in to the application, you recive an SMS on yu phone contianing the OTP, What authentication factor is this?
 Answer: something you have
+
+## Implementations and Applications
+
+### MFA in Banking
+* protect user's personal information from cyber thef, fraud, and other threats.
+
+### MFA in Helthcare
+Due to regulations like HIPAA, MFA makes sure that patient records and personal health information are only accessible by authorizaed persons
+
+### MFA in Corporate IT
+IT departments in the corporate world are under intense pressure to protect sensitive business data and maintain system integrity. MFA helps mitigate the risk of unauthorized access that could lead to data theft, espionage, or sabotage.
+
+### Questions
+Q: Is MFA an important factor in keeping our online and offline activities safe from threat actors?
+Answer: yea
