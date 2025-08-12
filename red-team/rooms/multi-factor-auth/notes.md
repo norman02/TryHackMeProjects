@@ -84,3 +84,14 @@ A: rate limiting
 ### Questions
 Q: What is the flag in the dashboard?
 A:  904c8ac84e44f0ba942e9e11ee7037b8
+
+## Task 6 - Practical - Insecure Coding
+
+### Exploitation
+* Login to http://mfa.thm/labs/second using the same credentials as befor
+* Bypass the OTP step by directly accessing the dashboard http://mfa.thm/labs/second/dashboard
+
+
+### Questions
+Q: What is the flag in the dashboard?
+A: 87880e9d27001affdff90989f351c462
