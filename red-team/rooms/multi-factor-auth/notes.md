@@ -53,3 +53,13 @@ IT departments in the corporate world are under intense pressure to protect sens
 ### Questions
 Q: Is MFA an important factor in keeping our online and offline activities safe from threat actors?
 Answer: yea
+
+## Task 4 - Common Vulnerabilities in MFA
+* Weak OTP Generation Algorithms
+* Application leaking the 2FA Token
+* Brute Forcing the OTP
+* Usage of EVilginx
+
+### Questions
+Q: What can be implemented to help prevent brute forcing OTPs?
+A: rate limiting
