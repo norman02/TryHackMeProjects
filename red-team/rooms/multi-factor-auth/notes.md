@@ -63,3 +63,24 @@ Answer: yea
 ### Questions
 Q: What can be implemented to help prevent brute forcing OTPs?
 A: rate limiting
+
+## Task 5 - Practical - OTP Leakage
+### OTP Leakage
+* Server-Side Validation and Return of Sensitive Data
+* Lack of Proper Security Practices
+* Debugging Inforrmation Left In Production
+
+
+### Exploitation
+
+* Go to http://mfa.thm/labs/first
+* Login with the credentials `thm@mail.thm` `test123`
+* You will see an XHR request sent to the /token endpoint
+* the application returns a response with a size of 16 bytes. Click this request and navigate to the response tab
+* Copy the value of the token parameter and past it into the OTP form, then click verify account
+* Retrieve the flag
+
+
+### Questions
+Q: What is the flag in the dashboard?
+A:  904c8ac84e44f0ba942e9e11ee7037b8
