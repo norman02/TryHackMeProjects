@@ -1,0 +1,13 @@
+# Nmap 7.94SVN scan initiated Wed Aug 13 09:36:39 2025 as: nmap -p- -T4 -v -Pn -oN scans/full-port.txt hammer.thm
+Increasing send delay for 10.201.94.145 from 0 to 5 due to 119 out of 296 dropped probes since last increase.
+Increasing send delay for 10.201.94.145 from 5 to 10 due to 11 out of 20 dropped probes since last increase.
+Warning: 10.201.94.145 giving up on port because retransmission cap hit (6).
+Nmap scan report for hammer.thm (10.201.94.145)
+Host is up (0.15s latency).
+Not shown: 64773 closed tcp ports (conn-refused), 760 filtered tcp ports (no-response)
+PORT     STATE SERVICE
+22/tcp   open  ssh
+1337/tcp open  waste
+
+Read data files from: /usr/bin/../share/nmap
+# Nmap done at Wed Aug 13 10:06:17 2025 -- 1 IP address (1 host up) scanned in 1777.70 seconds
