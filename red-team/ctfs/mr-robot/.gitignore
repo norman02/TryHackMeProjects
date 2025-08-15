@@ -1,0 +1,35 @@
+# editors/OS
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# languages
+__pycache__/
+*.pyc
+.venv/
+.env
+
+# logs/tmp
+*.log
+tmp/
+dist/
+build/
+
+# CTF-specific
+loot/
+wordlists/
+downloads/
+scans/*.xml
+scans/*.gnmap
+secrets/
+!secrets/.keep
+
+# VMs/images
+*.iso
+*.ova
+*.vmdk
+*.qcow2
+
