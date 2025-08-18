@@ -12,8 +12,8 @@
 /feed                [36m (Status: 301)[0m [Size: 0][34m [--> http://robot.thm/feed/][0m
 /images              [36m (Status: 301)[0m [Size: 232][34m [--> http://robot.thm/images/][0m
 /image               [36m (Status: 301)[0m [Size: 0][34m [--> http://robot.thm/image/][0m
-/Image               [36m (Status: 301)[0m [Size: 0][34m [--> http://robot.thm/Image/][0m
 /index.html          [32m (Status: 200)[0m [Size: 1188]
+/Image               [36m (Status: 301)[0m [Size: 0][34m [--> http://robot.thm/Image/][0m
 /index.php           [36m (Status: 301)[0m [Size: 0][34m [--> http://robot.thm/][0m
 /intro               [32m (Status: 200)[0m [Size: 516314]
 /js                  [36m (Status: 301)[0m [Size: 228][34m [--> http://robot.thm/js/][0m
@@ -38,8 +38,8 @@
 /wp-links-opml       [32m (Status: 200)[0m [Size: 227]
 /wp-load             [32m (Status: 200)[0m [Size: 0]
 /wp-login            [32m (Status: 200)[0m [Size: 2585]
-/wp-settings         [31m (Status: 500)[0m [Size: 0]
 /wp-mail             [31m (Status: 500)[0m [Size: 3064]
+/wp-settings         [31m (Status: 500)[0m [Size: 0]
 /wp-signup           [36m (Status: 302)[0m [Size: 0][34m [--> http://robot.thm/wp-login.php?action=register][0m
-/xmlrpc.php          [33m (Status: 405)[0m [Size: 42]
 /xmlrpc              [33m (Status: 405)[0m [Size: 42]
+/xmlrpc.php          [33m (Status: 405)[0m [Size: 42]

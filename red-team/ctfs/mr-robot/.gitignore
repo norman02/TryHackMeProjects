@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+notes.md
+notes.md
+=======
 
 notes.md
 
@@ -36,3 +40,4 @@ secrets/
 *.vmdk
 *.qcow2
 
+>>>>>>> master
