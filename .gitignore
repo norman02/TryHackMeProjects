@@ -24,6 +24,7 @@ venv/
 *.burp
 
 # Large or sensitive artifacts (add manually if needed)
+secrets/
 loot/
 *.zip
 *.rar
