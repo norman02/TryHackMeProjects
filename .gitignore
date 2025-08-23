@@ -1,29 +1,9 @@
-# Ignore system and editor files
-.DS_Store
-Thumbs.db
-desktop.ini
-
-# Vim / nano / backup files
-*.swp
-*.swo
-*~
-*.bak
-
-# VSCode settings
-.vscode/
-
-# Python bytecode and venvs
-__pycache__/
-*.py[cod]
-*.pyo
-env/
-venv/
-.venv/
 
 # Burp Suite temporary files
 *.burp
 
 # Large or sensitive artifacts (add manually if needed)
+secrets/
 loot/
 *.zip
 *.rar
@@ -40,24 +20,23 @@ loot/
 # Ignore the secrets folder
 **/secrets/
 
+**/loot/
+
+
 # Temporary scan outputs (optional if you want to clean commits)
 *.nmap
 *.gnmap
 *.xml
 *.out
+
 *.log
+tmp/
+dist/
+build/
 
-# Jupyter notebooks
-*.ipynb_checkpoints/
-
-# TryHackMe / CTF-specific
-credentials.txt
-creds.txt
-*password*.txt
-*hash*.txt
-
-# Ignore compiled scripts or exploits
-*.exe
-*.out
-*.bin
+# CTF-specific
+loot/
+secrets/
+!secrets/.keep
+GIT
 
