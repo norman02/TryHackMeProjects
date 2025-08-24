@@ -1,0 +1,21 @@
+# Nmap 7.94SVN scan initiated Wed Aug 20 08:13:43 2025 as: nmap -sV -sC -oN scans/nmap-initial.txt rootme.thm
+Nmap scan report for rootme.thm (10.10.227.19)
+Host is up (0.21s latency).
+Not shown: 998 closed tcp ports (conn-refused)
+PORT   STATE SERVICE VERSION
+22/tcp open  ssh     OpenSSH 8.2p1 Ubuntu 4ubuntu0.13 (Ubuntu Linux; protocol 2.0)
+| ssh-hostkey: 
+|   3072 78:26:e2:c0:1f:86:fd:a8:dd:5f:2a:cd:d6:d8:0b:0c (RSA)
+|   256 fa:06:1e:8b:ec:29:ad:b0:83:6c:4e:1a:dc:60:c2:e3 (ECDSA)
+|_  256 ff:17:f1:16:79:f8:38:8a:ca:43:e5:78:6b:55:ab:97 (ED25519)
+80/tcp open  http    Apache httpd 2.4.41 ((Ubuntu))
+|_http-title: HackIT - Home
+|_http-server-header: Apache/2.4.41 (Ubuntu)
+| http-cookie-flags: 
+|   /: 
+|     PHPSESSID: 
+|_      httponly flag not set
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Wed Aug 20 08:14:16 2025 -- 1 IP address (1 host up) scanned in 33.55 seconds
