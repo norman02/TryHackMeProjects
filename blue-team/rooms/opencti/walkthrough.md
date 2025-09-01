@@ -1,139 +1,125 @@
-# 🛡️ TryHackMe Walkthrough – OpenCTI  
-**Path:** SOC Analyst 1  
-**Difficulty:** Medium  
-**Status:** In Progress  
-**VM IP:** `10.201.73.176`  
-**Start Date:** 2025-08-29
+# 🛡️ TryHackMe Walkthrough – OpenCTI
+
+## 📘 Room Overview
+
+**OpenCTI** (Open Cyber Threat Intelligence) is an open-source platform for managing, visualizing, and enriching cyber threat intelligence. This TryHackMe room introduces OpenCTI’s structure, core features, and practical workflows for security analysts.
+
+- 🧠 Focus: CTI, MITRE ATT&CK, Malware & APT investigations
+- 🔗 Room Link: [TryHackMe – OpenCTI](https://tryhackme.com/room/opencti)
 
 ---
 
-## 📘 Room Summary
+## 🧭 Tasks & Answers
 
-OpenCTI (Open Cyber Threat Intelligence) is an open-source platform for managing, visualizing, and enriching cyber threat intelligence. This room introduces OpenCTI's structure, features, and practical workflows for security analysts, mapped closely to MITRE ATT&CK concepts.
-
----
-
-## ✅ Task 1 – Room Overview
-
-> **Q:** _Read the above._  
-> **A:** _No answer required._
-
-This room introduces:
-- What OpenCTI is and how it’s used
-- How to navigate the platform
-- Functionalities relevant to SOC workflows
-
-**Suggested Prerequisite Rooms**:
-- MITRE ATT&CK Framework  
-- MISP  
-- TheHive  
-- Threat Intelligence Tools
+### ✅ Task 1 – Room Overview
+> _No answer required._  
+Introductory overview of OpenCTI and its purpose.
 
 ---
 
-## ✅ Task 2 – Introduction to OpenCTI
-
-OpenCTI is an open-source platform developed by **ANSSI** (France’s national cybersecurity agency) to manage **Cyber Threat Intelligence (CTI)** in a structured, relational format.
-
-### 🔍 Key Objectives
-- Centralize threat data — collect, analyze, and visualize campaigns, malware, indicators (IOCs), TTPs
-- Link entities together — e.g., Threat Actor → Campaign → Malware → Victim
-- Visual analysis — graph-based dashboards with rich context
-- Framework support — integrates **MITRE ATT&CK**, MISP, and TheHive
-- Handles both technical and strategic data — connects tactical observables with high-level intel
-
-> 💡 _OpenCTI isn’t just a database — it’s a **living graph** of threats and their ecosystem._
+### ✅ Task 2 – Introduction to OpenCTI
+- Developed by **ANSSI** (France)
+- Supports STIX 2.0+ format
+- Graph-based representation of threats
+- Connects to external sources: MISP, TheHive, CVE feeds, etc.
 
 ---
 
-## ✅ Task 3 – OpenCTI Data Model
-
-OpenCTI uses the **STIX 2.0+ standard** as its core data modeling framework.
-
-### 🧠 What is STIX?
-> **Structured Threat Information Expression (STIX)** is a standardized language for cyber threat intelligence (CTI) sharing.  
-> It enables consistent expression of indicators, threat actors, attack patterns, malware, and their **relationships**.
-
-> Think of it as:  
-> `Entities` + `Relationships` + `Source/Context` = **A full intelligence graph**
+### ✅ Task 3 – OpenCTI Data Model
+- CTI modeled using **STIX 2.0**: entities + relationships + context
+- Components: GraphQL API, Workers, and Connectors
 
 ---
 
-### 🏗️ OpenCTI Architecture (Highlights)
+### ✅ Task 4 – OpenCTI Dashboard 1
+1. **Which group is known to have used the 4H RAT malware?**  
+   → `Maverick Panda`
 
-| Component        | Role                                                                 |
-|------------------|----------------------------------------------------------------------|
-| **GraphQL API**  | Interfaces with clients (frontend/backend) to query threat data      |
-| **Write Workers**| Python workers that write queries asynchronously via RabbitMQ        |
-| **Connectors**   | Plugin-like modules to ingest, enrich, import, or export data        |
+2. **What kill-chain phase is the Command-Line Interface attack pattern associated with?**  
+   → `execution-ics`
 
----
-
-### 🔌 Connector Types
-
-| Class                       | Description                                         | Examples                      |
-|----------------------------|-----------------------------------------------------|-------------------------------|
-| External Input Connector   | Ingests data from external sources                  | MISP, MITRE, TheHive, CVE     |
-| Stream Connector           | Consumes the platform’s data stream                 | Tanium, History               |
-| Internal Enrichment        | Adds context to entities (from user action)         | Observable enrichment         |
-| Internal Import File       | Extracts intel from user-uploaded files             | STIX2 files, PDFs             |
-| Internal Export File       | Exports entities/data into different formats        | STIX2 export, CSV, PDF        |
-
-> 🔍 These connectors are how OpenCTI **talks to other tools**, enriching and transforming raw data into a usable graph of knowledge.
+3. **What category tab contains indicators under activities?**  
+   → `Observations`
 
 ---
 
-## 🔄 Task 4 – OpenCTI Dashboard 1
+### ✅ Task 5 – OpenCTI Dashboard 2
+1. **Which intrusion sets are linked to Cobalt Strike (Good confidence)?**  
+   → `CopyKittens, FIN7`
 
-🖥️ **Access Dashboard:** `http://10.201.73.176:8080`  
-🔐 **Credentials:**  
-- **Username:** `info@tryhack.io`  
-- **Password:** `TryHackMe1234`
-
-Give the machine a few minutes to initialize. Log in via AttackBox in fullscreen.
-
-### Key Panels:
-- **Activities**: Ingested incidents (reports, investigations)  
-- **Knowledge**: Linked entities (Tools, Victims, Threat Actors)  
-- **Analysis**: Imported reports (e.g., MITRE Triton), notes, references  
-- **Events**: Incidents & response timelines  
-- **Observations**: Indicators & detections (IP, hash, etc.)  
-- **Threats**: Actors, Intrusion Sets, Campaigns  
-- **Arsenal**: Malware, TTPs, CoAs, Vulnerabilities  
-- **Entities**: Geopolitical and organizational targets
+2. **Who is listed as the author of this entity?**  
+   → `The MITRE Corporation`
 
 ---
 
-### ✅ Questions
-> **Q1:** What is the name of the group that uses the 4H RAT malware?  
-> **A:** _[To be confirmed in-lab]_  
+### ✅ Task 6 – Investigative Scenario
 
-> **Q2:** What kill-chain phase is linked with the Command-Line Interface Attack Pattern?  
-> **A:** `Execution`  
+**Topic:** Investigate the CaddyWiper malware and APT37 threat group.
 
-> **Q3:** Within the Activities category, which tab would house the Indicators?  
-> **A:** `Observations`
+#### 📌 Questions & Answers
+
+1. **Earliest date recorded related to CaddyWiper**  
+   → `2022/03/15`  
+   🧠 _Based on the ESET report inside OpenCTI's knowledge tab — not the entity metadata._
+
+2. **Attack technique used by the malware for execution**  
+   → `Native API`
+
+3. **How many malware relations are linked to this attack technique?**  
+   → `113`
+
+4. **Which 3 tools were used by the Attack Technique in 2016?**  
+   → `BloodHound, Empire, ShimRatReporter`
+
+5. **What country is APT37 associated with?**  
+   → `North Korea`
+
+6. **Which attack techniques are used by the group for initial access?**  
+   → `T1189, T1566`  
+   _Drive-by Compromise and Phishing (respectively)._
 
 ---
 
-## 🧠 Vault Captures (so far)
-- OpenCTI = Visual knowledge graph for cyber threat intel  
-- Arsenal tab = useful for detection rule context (malware, TTPs, CVEs)  
-- Courses of Action = direct countermeasures to mapped techniques  
-- STIX model enables traceability, enrichment, and standardized sharing of TI  
+## 🧠 Analyst Notes
+
+### 💡 Takeaways from OpenCTI
+- OpenCTI presents **CTI as an interactive graph**, not just static lists.
+- Malware, attack techniques, observables, and reports are all linked.
+- Best used in conjunction with **ATT&CK**, **report-based analysis**, and **external tools** (EDR, SIEM, MISP).
+
+### ⚠️ THM Caveats
+- Answer validation sometimes expects **exact report phrases**, not metadata fields.
+- CTI success depends on reading **source documents**, not just relying on UI entries.
+- Non-technical audiences may be confused by ATT&CK technique IDs (`T1189`, `T1566`); real-world reporting should prioritize readable summaries like:
+  - “Initial access occurred via phishing and drive-by compromise.”
 
 ---
 
-## 🔗 Related Tools
-- [OpenCTI Documentation](https://www.opencti.io/)  
-- [STIX 2.1 Standard](https://oasis-open.github.io/cti-documentation/stix/intro.html)  
-- [MITRE ATT&CK Navigator](https://attack.mitre.org/)  
-- [TheHive Project](https://thehive-project.org/)  
-- [MISP Threat Sharing](https://www.misp-project.org/)
+## 📂 Vault Captures (Reusables)
+
+- **Arsenal Tab** in OpenCTI = pivot point for malware → TTP → CVE → detection logic.
+- **Observations Tab** = hunting ground for indicators (IOCs) and real-world detections.
+- **Confidence scoring** in OpenCTI = crucial to filter noise.
+- **"Author" field** ≠ attacker; may refer to data source or intel provider.
 
 ---
 
-## 📅 Timeline
-- Started: 2025-08-29  
-- In Progress: ✅ Tasks 1–3 complete, 🔄 Task 4 in progress
+## 🔗 References
+
+- [MITRE ATT&CK](https://attack.mitre.org/)
+- [OpenCTI GitHub](https://github.com/OpenCTI-Platform/opencti)
+- [ESET CaddyWiper Report](https://www.welivesecurity.com/en/eset-research/caddywiper-data-wiper-ukraine/)
+- [[Related Cheatsheets]](../cheatsheets)  
+  - MITRE ATT&CK  
+  - MISP  
+  - TheHive  
+  - Threat Intel Tools  
+
+---
+
+## 🏁 Completion
+
+🎉 **Room completed successfully!**  
+Part of my progress toward becoming a SOC Analyst.
+
 
