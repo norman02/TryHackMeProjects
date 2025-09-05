@@ -20,6 +20,7 @@ loot/
 # Ignore the secrets folder
 **/secrets/
 
+=
 
 # Temporary scan outputs (optional if you want to clean commits)
 *.nmap
