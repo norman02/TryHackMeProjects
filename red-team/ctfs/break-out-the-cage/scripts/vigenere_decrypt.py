@@ -1,6 +1,9 @@
 # vigenere_decrypt.py
 def vigenere_decrypt(ciphertext, key):
+
     plaintext = 'namelesstwo'
+
+
     key = key.upper()
     key_len = len(key)
     for i, c in enumerate(ciphertext):
