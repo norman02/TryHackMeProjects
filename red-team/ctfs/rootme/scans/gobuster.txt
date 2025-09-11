@@ -1,0 +1,9 @@
+/.hta                [33m (Status: 403)[0m [Size: 275]
+/.htpasswd           [33m (Status: 403)[0m [Size: 275]
+/.htaccess           [33m (Status: 403)[0m [Size: 275]
+/css                 [36m (Status: 301)[0m [Size: 306][34m [--> http://rootme.thm/css/][0m
+/index.php           [32m (Status: 200)[0m [Size: 616]
+/js                  [36m (Status: 301)[0m [Size: 305][34m [--> http://rootme.thm/js/][0m
+/panel               [36m (Status: 301)[0m [Size: 308][34m [--> http://rootme.thm/panel/][0m
+/server-status       [33m (Status: 403)[0m [Size: 275]
+/uploads             [36m (Status: 301)[0m [Size: 310][34m [--> http://rootme.thm/uploads/][0m
