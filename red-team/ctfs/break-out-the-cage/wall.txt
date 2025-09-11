@@ -1,0 +1,351 @@
+/lib64/ld-linux-x86-64.so.2
+libc.so.6
+__printf_chk
+setlocale
+strncmp
+optind
+dcgettext
+getpwuid
+getgrgid
+signal
+strncpy
+fork
+warnx
+sigprocmask
+__stack_chk_fail
+realloc
+fsync
+stdin
+_exit
+strspn
+strdup
+strtod
+strtol
+fgetc
+fgets
+getpwnam
+calloc
+strlen
+sigemptyset
+localeconv
+writev
+warn
+strcspn
+__errno_location
+strndup
+ttyname
+__fprintf_chk
+ctime
+getgrnam
+stdout
+fputc
+fputs
+memcpy
+fclose
+__memmove_chk
+__strtol_internal
+__vsnprintf_chk
+strtoul
+malloc
+getgid
+__ctype_b_loc
+optarg
+stderr
+alarm
+__snprintf_chk
+getlogin
+getuid
+getegid
+getopt_long
+freopen
+gethostname
+geteuid
+__fpending
+endutxent
+strchr
+program_invocation_short_name
+getutxent
+__cxa_finalize
+__vasprintf_chk
+fcntl
+errx
+bindtextdomain
+access
+getgrouplist
+strcmp
+__libc_start_main
+ferror
+__strtoul_internal
+sysconf
+free
+__progname
+__cxa_atexit
+_IO_stdin_used
+GLIBC_2.3
+GLIBC_2.8
+GLIBC_2.14
+GLIBC_2.4
+GLIBC_2.3.4
+GLIBC_2.2.5
+_ITM_deregisterTMCloneTable
+__gmon_start__
+_ITM_registerTMCloneTable
+%zS 
+%rS 
+%jS 
+%bS 
+%ZS 
+%RS 
+%JS 
+%BS 
+%:S 
+%2S 
+%*S 
+%"S 
+%zR 
+%rR 
+%jR 
+%bR 
+%ZR 
+%RR 
+%JR 
+%BR 
+%:R 
+%2R 
+%*R 
+%"R 
+AWAVA
+AUATI
+-SP 
+=dN 
+|$P1
+\$pL
+D$XH
+l$`H
+D$HH
+D$ H
+L$ L
+D$(y
+D$pL
+l$0L
+D$(H
+t$ H
+<	t2
+D$p^@
+D$XH
+T$XH
+T$`@
+D$(B
+T$HH
+T$0H
+\$8L
+T$0H
+T$@AV
+t$@L
+\$XL
+t$8H
+t$@L
+T$0L
+=QF 
+5JF 
+=QF 
+AUATI
+[]A\A]
+AUATI
+T$0H
+L$8L
+D$@L
+L$Ht7
+)D$P
+)L$`
+)T$p
++H+k
+D$ M
+[]A\A]
+D$ M
+ATUSH
+ upH
+[]A\
+AWAVAUATUSH
+=UB 
+="B 
+D$ H
+=VB 
+[]A\A]A^A_
+D$(H
+=B@ 
+5A> 
+/ujH
+/t#H
+AUATI
+\t2Hc
+[]A\A]
+[]A\A]
+AUATA
+=A< 
+[]A\A]
+=j; 
+AWAVAUATI
+D$(1
+t$(dH34%(
+8[]A\A]A^A_
+D$ H
+\$ 1
+T$ H
+l$ A
+L$ A
+L$ H
+T$ L
+VUUU
+UStT
+[]A\
+UStT
+[]A\
+AUATI
+T$0H
+L$8L
+D$@L
+L$HH
+dH3<%(
+X[]A\A]
+ATUI
+[]A\
+=w3 
+=Z3 
+=W2 
+ATUI
+[]A\
+ATUI
+[]A\
+=G0 
+=*0 
+$u9H
+[]A\A]
+[]A\A]
+AUATUSH
+D$81
+\$8dH3
+H[]A\A]
+AWAVAUATUSH
+<,th
+t0L9
+[]A\A]A^A_
+[]A\A]A^A_
+[]A\A]A^A_
+w3<+t
+AWAVAUATI
+[]A\A]A^A_
+[]A\A]A^A_
+AVAUATI
+x:I	
+[]A\A]A^
+]A\A]A^
+AWAVAUATUSH
+<$H9
+-te1
+[]A\A]A^A_
+AVAUATUSH
+<$/t
+ []A\A]A^
+AWAVAUATI
+[]A\A]A^A_
+[]A\A]A^A_
+[]A\A]A^A_
+T$@H
+L$HL
+D$PL
+L$Xt:
+)D$`
+)L$p
+D$(1
+\$(dH3
+AWAVAUATUSH
+[]A\A]A^A_
+AWAVI
+AUATL
+[]A\A]A^A_
+cannot allocate %zu bytes
+write error
+someone
+somewhere
+/usr/share/locale
+util-linux
+invalid timeout argument
+invalid timeout argument: %s
+invalid group argument
+%s: unknown gid
+%s from %s
+util-linux 2.31.1
+Usage:
+Options:
+display version
+display this help
+ -V, --version
+ -h, --help
+%-25s%s
+%-25s%s
+For more details see %s.
+wall(1)
+nt:g:Vh
+cannot get passwd uid
+cannot get tty name
+/dev/
+cannot duplicate string
+%-*.*s
+will not read %s - use stdin.
+cannot open %s
+\%3o
+nobanner
+timeout
+group
+--nobanner is available only for root
+ %s [options] [<file> | <message>]
+Write a message to all users.
+ -g, --group <group>     only send message to group
+ -n, --nobanner          do not print banner, works only for root
+ -t, --timeout <timeout> write timeout in seconds
+Try '%s --help' for more information.
+Broadcast message from %s@%s (%s) (%s):
+getgrouplist found more groups than sysconf allows
+internal error: too many iov's
+%s: BAD ERROR, message is far too long
+%s%s
+excessively long line arg
+%s: %m
+open failed
+fork: %m
+cannot fork
+write failed: %s
+%s: '%s'
+KMGTPEZY
+kmgtpezy
+BKMGTPE
+%d%s%lu%s
+%d%s
+;*3$"
+4a8461832d8e28c2b09ba100363d3f9c6eafce.debug
+.shstrtab
+.interp
+.note.ABI-tag
+.note.gnu.build-id
+.gnu.hash
+.dynsym
+.dynstr
+.gnu.version
+.gnu.version_r
+.rela.dyn
+.rela.plt
+.init
+.plt.got
+.text
+.fini
+.rodata
+.eh_frame_hdr
+.eh_frame
+.init_array
+.fini_array
+.data.rel.ro
+.dynamic
+.data
+.bss
+.gnu_debuglink
