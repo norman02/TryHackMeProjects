@@ -1,0 +1,9 @@
+/.htpasswd           [33m (Status: 403)[0m [Size: 273]
+/.htaccess           [33m (Status: 403)[0m [Size: 273]
+/.hta                [33m (Status: 403)[0m [Size: 273]
+/contracts           [36m (Status: 301)[0m [Size: 308][34m [--> http://cage.thm/contracts/][0m
+/html                [36m (Status: 301)[0m [Size: 303][34m [--> http://cage.thm/html/][0m
+/images              [36m (Status: 301)[0m [Size: 305][34m [--> http://cage.thm/images/][0m
+/index.html          [32m (Status: 200)[0m [Size: 2453]
+/scripts             [36m (Status: 301)[0m [Size: 306][34m [--> http://cage.thm/scripts/][0m
+/server-status       [33m (Status: 403)[0m [Size: 273]
